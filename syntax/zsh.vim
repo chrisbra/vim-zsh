@@ -32,7 +32,7 @@ syn match   zshJobSpec          '%\(\d\+\|?\=\w\+\|[%+-]\)'
 
 syn keyword zshPrecommand       noglob nocorrect exec command builtin - time
 
-syn keyword zshDelimiter        do done
+syn keyword zshDelimiter        do done end
 
 syn keyword zshConditional      if then elif else fi case in esac select
 
