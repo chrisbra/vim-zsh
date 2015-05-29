@@ -178,6 +178,61 @@ syn keyword zshOptions          aliases allexport alwayslastprompt alwaystoend
                                 \ trapsasync typesetsilent unset verbose vi
                                 \ warncreateglobal xtrace zle
 
+syn keyword zshOptions          noaliases noallexport noalwayslastprompt noalwaystoend
+                                \ noappendhistory noautocd noautocontinue noautolist
+                                \ noautomenu noautonamedirs noautoparamkeys
+                                \ noautoparamslash noautopushd noautoremoveslash
+                                \ noautoresume nobadpattern nobanghist nobareglobqual
+                                \ nobashautolist nobashrematch nobeep nobgnice nobraceccl
+                                \ nobraceexpand nobsdecho nocaseglob nocasematch nocbases
+                                \ nocdablevars nochasedots nochaselinks nocheckjobs
+                                \ noclobber nocombiningchars nocompletealiases
+                                \ nocompleteinword nocontinueonerror nocorrect
+                                \ nocorrectall nocprecedences nocshjunkiehistory
+                                \ nocshjunkieloops nocshjunkiequotes nocshnullcmd
+                                \ nocshnullglob nodebugbeforecmd nodotglob nodvorak
+                                \ noemacs noequals noerrexit noerrreturn noevallineno
+                                \ noexec noextendedglob noextendedhistory noflowcontrol
+                                \ noforcefloat nofunctionargzero noglob noglobalexport
+                                \ noglobalrcs noglobassign noglobcomplete noglobdots
+                                \ noglobsubst nohashall nohashcmds nohashdirs
+                                \ nohashexecutablesonly nohashlistall
+                                \ nohistallowclobber nohistappend nohistbeep
+                                \ nohistexpand nohistexpiredupsfirst nohistfcntllock
+                                \ nohistfindnodups nohistignorealldups
+                                \ nohistignoredups nohistignorespace nohistlexwords
+                                \ nohistnofunctions nohistnostore nohistreduceblanks
+                                \ nohistsavebycopy nohistsavenodups
+                                \ nohistsubstpattern nohistverify nohup noignorebraces
+                                \ noignoreclosebraces noignoreeof noincappendhistory
+                                \ noincappendhistorytime nointeractive
+                                \ nointeractivecomments noksharrays nokshautoload
+                                \ nokshglob nokshoptionprint nokshtypeset
+                                \ nokshzerosubscript nolistambiguous nolistbeep
+                                \ nolistpacked nolistrowsfirst nolisttypes nolocalloops
+                                \ nolocaloptions nolocalpatterns nolocaltraps nolog
+                                \ nologin nolonglistjobs nomagicequalsubst nomailwarn
+                                \ nomailwarning nomarkdirs nomenucomplete nomonitor
+                                \ nomultibyte nomultifuncdef nomultios nonomatch nonotify
+                                \ nonullglob nonumericglobsort nooctalzeroes noonecmd
+                                \ nooverstrike nopathdirs nopathscript nophysical
+                                \ nopipefail noposixaliases noposixargzero
+                                \ noposixbuiltins noposixcd noposixidentifiers
+                                \ noposixjobs noposixstrings noposixtraps
+                                \ noprinteightbit noprintexitvalue noprivileged
+                                \ nopromptbang nopromptcr nopromptpercent nopromptsp
+                                \ nopromptsubst nopromptvars nopushdignoredups
+                                \ nopushdminus nopushdsilent nopushdtohome
+                                \ norcexpandparam norcquotes norcs norecexact
+                                \ norematchpcre norestricted normstarsilent
+                                \ normstarwait nosharehistory noshfileexpansion
+                                \ noshglob noshinstdin noshnullcmd noshoptionletters
+                                \ noshortloops noshwordsplit nosinglecommand
+                                \ nosinglelinezle nosourcetrace nostdin
+                                \ nosunkeyboardhack notrackall notransientrprompt
+                                \ notrapsasync notypesetsilent nounset noverbose novi
+                                \ nowarncreateglobal noxtrace nozle
+
 syn keyword zshTypes            float integer local typeset declare
 
 " XXX: this may be too much
@@ -248,7 +303,7 @@ else
   hi def link zshDeref          None
 endif
 hi def link zshCommands         Keyword
-hi def link zshOptions          Keyword
+hi def link zshOptions          Constant
 hi def link zshTypes            Type
 hi def link zshSwitches         Special
 hi def link zshNumber           Number
