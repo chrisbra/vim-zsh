@@ -1,7 +1,9 @@
 " Vim syntax file
-" Language:         Zsh shell script
-" Maintainer:       Nikolai Weibull <now@bitwi.se>
-" Latest Revision:  2010-01-23
+" Language:             Zsh shell script
+" Maintainer:           Christian Brabandt <cb@256bit.org>
+" Previous Maintainer:  Nikolai Weibull <now@bitwi.se>
+" Latest Revision:      2015-05-29
+" License:              Vim (see :h license)
 
 if exists("b:current_syntax")
   finish
@@ -170,16 +172,8 @@ hi def link zshKeyword          Keyword
 hi def link zshFunction         None
 hi def link zshKSHFunction      zshFunction
 hi def link zshHereDoc          String
-if 0
-  hi def link zshOperator         Operator
-else
-  hi def link zshOperator         None
-endif
-if 1
-  hi def link zshRedir            Operator
-else
-  hi def link zshRedir            None
-endif
+hi def link zshOperator         None
+hi def link zshRedir            Operator
 hi def link zshVariable         None
 hi def link zshVariableDef      zshVariable
 hi def link zshDereferencing    PreProc
