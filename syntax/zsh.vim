@@ -16,7 +16,7 @@ setlocal iskeyword+=-
 
 syn keyword zshTodo             contained TODO FIXME XXX NOTE
 
-syn region  zshComment          oneline start='\%(^\|\s\)#' end='$'
+syn region  zshComment          oneline start='\%(^\|\s*\)#' end='$'
                                 \ contains=zshTodo,@Spell
 
 syn match   zshPreProc          '^\%1l#\%(!\|compdef\|autoload\).*$'
@@ -66,7 +66,7 @@ syn region  zshHereDoc          matchgroup=zshRedir
                                 \ end='^\s*\z1\>'
                                 \ contains=@zshSubst
 syn region  zshHereDoc          matchgroup=zshRedir
-                                \ start=+<\@<!<<\s*\(["']\)\z(\S\+\)\1+ 
+                                \ start=+<\@<!<<\s*\(["']\)\z(\S\+\)\1+
                                 \ end='^\z1\>'
 syn region  zshHereDoc          matchgroup=zshRedir
                                 \ start=+<\@<!<<-\s*\(["']\)\z(\S\+\)\1+
