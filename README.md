@@ -1,2 +1,2 @@
-# vim-zsh-syntax
-Official Vim Syntax File for Zsh
+# vim-zsh
+Official Vim indent, ftplugin and syntax files for zsh
