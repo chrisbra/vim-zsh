@@ -311,7 +311,7 @@ syn region  zshSubst            matchgroup=zshSubstDelim start='\${' skip='\\}'
 syn region  zshOldSubst         matchgroup=zshSubstDelim start=+`+ skip=+\\`+
                                 \ end=+`+ contains=TOP,zshOldSubst
 
-syn sync    minlines=50 maxline=90
+syn sync    minlines=50 maxlines=90
 syn sync    match zshHereDocSync    grouphere   NONE '<<-\=\s*\%(\\\=\S\+\|\(["']\)\S\+\1\)'
 syn sync    match zshHereDocEndSync groupthere  NONE '^\s*EO\a\+\>'
 
