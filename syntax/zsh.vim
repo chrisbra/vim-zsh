@@ -301,9 +301,9 @@ syn region  zshSubst            matchgroup=zshSubstDelim transparent
 syn region  zshParentheses      transparent start='(' skip='\\)' end=')'
 syn region  zshMathSubst        matchgroup=zshSubstDelim transparent
                                 \ start='\$((' skip='\\)'
-                                \ matchgroup=zshSubstDelim end=')[^)]*)'
+                                \ matchgroup=zshSubstDelim end='))'
                                 \ contains=zshParentheses,@zshSubst,zshNumber,
-                                \ @zshDerefs,zshString
+                                \ @zshDerefs,zshString keepend
 syn region  zshBrackets         contained transparent start='{' skip='\\}'
                                 \ end='}'
 syn region  zshSubst            matchgroup=zshSubstDelim start='\${' skip='\\}'
