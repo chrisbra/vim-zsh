@@ -13,11 +13,7 @@ endif
 let s:cpo_save = &cpo
 set cpo&vim
 
-if v:version > 704 || (v:version == 704 && has("patch1142"))
-    syn iskeyword @,48-57,_,192-255,#,-
-else
-    setlocal iskeyword+=-
-endif
+setlocal iskeyword+=-,!
 if get(g:, 'zsh_fold_enable', 0)
     setlocal foldmethod=syntax
 endif
