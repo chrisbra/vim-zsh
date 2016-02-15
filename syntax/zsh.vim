@@ -2,7 +2,7 @@
 " Language:             Zsh shell script
 " Maintainer:           Christian Brabandt <cb@256bit.org>
 " Previous Maintainer:  Nikolai Weibull <now@bitwi.se>
-" Latest Revision:      2016-02-12
+" Latest Revision:      2016-02-15
 " License:              Vim (see :h license)
 " Repository:		https://github.com/chrisbra/vim-zsh
 
@@ -55,7 +55,7 @@ syn keyword zshException        always
 
 syn keyword zshKeyword          function nextgroup=zshKSHFunction skipwhite
 
-syn match   zshKSHFunction      contained '\k\+'
+syn match   zshKSHFunction      contained '\w\S\+'
 syn match   zshFunction         '^\s*\k\+\ze\s*()'
 
 syn match   zshOperator         '||\|&&\|;\|&!\='
