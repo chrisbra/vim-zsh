@@ -203,7 +203,7 @@ syn keyword zshOptions          aliases allexport all_export alwayslastprompt
                                 \ numeric_glob_sort octalzeroes octal_zeroes onecmd one_cmd
                                 \ overstrike over_strike pathdirs path_dirs pathscript
                                 \ path_script physical pipefail pipe_fail posixaliases
-                                \ posix_aliases posixargzero posix_arg_zero posix_argzero posixbuiltins 
+                                \ posix_aliases posixargzero posix_arg_zero posix_argzero posixbuiltins
                                 \ posix_builtins posixcd posix_cd posixidentifiers posix_identifiers
                                 \ posixjobs posix_jobs posixstrings posix_strings posixtraps
                                 \ posix_traps printeightbit print_eight_bit printexitvalue
@@ -282,7 +282,7 @@ syn keyword zshOptions          noaliases no_aliases noallexport no_allexport no
                                 \ nonumeric_glob_sort no_numeric_glob_sort nooctalzeroes no_octalzeroes nooctal_zeroes no_octal_zeroes noonecmd no_onecmd noone_cmd no_one_cmd
                                 \ nooverstrike no_overstrike noover_strike no_over_strike nopathdirs no_pathdirs nopath_dirs no_path_dirs nopathscript no_pathscript
                                 \ nopath_script no_path_script nophysical no_physical nopipefail no_pipefail nopipe_fail no_pipe_fail noposixaliases no_posixaliases
-                                \ noposix_aliases no_posix_aliases noposixargzero no_posixargzero no_posix_argzero noposix_arg_zero no_posix_arg_zero noposixbuiltins no_posixbuiltins 
+                                \ noposix_aliases no_posix_aliases noposixargzero no_posixargzero no_posix_argzero noposix_arg_zero no_posix_arg_zero noposixbuiltins no_posixbuiltins
                                 \ noposix_builtins no_posix_builtins noposixcd no_posixcd noposix_cd no_posix_cd noposixidentifiers no_posixidentifiers noposix_identifiers no_posix_identifiers
                                 \ noposixjobs no_posixjobs noposix_jobs no_posix_jobs noposixstrings no_posixstrings noposix_strings no_posix_strings noposixtraps no_posixtraps
                                 \ noposix_traps no_posix_traps noprinteightbit no_printeightbit noprint_eight_bit no_print_eight_bit noprintexitvalue no_printexitvalue
