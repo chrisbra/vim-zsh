@@ -319,6 +319,7 @@ syn cluster zshSubst            contains=zshSubst,zshOldSubst,zshMathSubst
 syn region  zshSubst            matchgroup=zshSubstDelim transparent
                                 \ start='\$(' skip='\\)' end=')' contains=TOP fold
 syn region  zshParentheses      transparent start='(' skip='\\)' end=')' fold
+syn region  zshGlob             start='(#' end=')'
 syn region  zshMathSubst        matchgroup=zshSubstDelim transparent
                                 \ start='\$((' skip='\\)'
                                 \ matchgroup=zshSubstDelim end='))'
@@ -383,6 +384,7 @@ hi def link zshSubst            PreProc
 hi def link zshMathSubst        zshSubst
 hi def link zshOldSubst         zshSubst
 hi def link zshSubstDelim       zshSubst
+hi def link zshGlob             zshSubst
 
 let b:current_syntax = "zsh"
 
