@@ -2,9 +2,9 @@
 " Language:             Zsh shell script
 " Maintainer:           Christian Brabandt <cb@256bit.org>
 " Previous Maintainer:  Nikolai Weibull <now@bitwi.se>
-" Latest Revision:      2016-02-15
+" Latest Revision:      2017-03-30
 " License:              Vim (see :h license)
-" Repository:		https://github.com/chrisbra/vim-zsh
+" Repository:           https://github.com/chrisbra/vim-zsh
 
 if exists("b:current_syntax")
   finish
@@ -88,7 +88,7 @@ syn match   zshVariable         '\<\h\w*' contained
 syn match   zshVariableDef      '\<\h\w*\ze+\=='
 " XXX: how safe is this?
 syn region  zshVariableDef      oneline
-                                \ start='\$\@<!\<\h\w*\[' end='\]\ze+\=='
+                                \ start='\$\@<!\<\h\w*\[' end='\]\ze+\?=\?'
                                 \ contains=@zshSubst
 
 syn cluster zshDerefs           contains=zshShortDeref,zshLongDeref,zshDeref
