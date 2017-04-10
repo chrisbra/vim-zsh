@@ -93,28 +93,14 @@ syn region  zshVariableDef      oneline
 
 syn cluster zshDerefs           contains=zshShortDeref,zshLongDeref,zshDeref
 
-if !exists("g:zsh_syntax_variables")
-  let s:zsh_syntax_variables = 'all'
-else
-  let s:zsh_syntax_variables = g:zsh_syntax_variables
-endif
+syn match zshShortDeref       '\$[!#$*@?_-]\w\@!'
+syn match zshShortDeref       '\$[=^~]*[#+]*\d\+\>'
 
-if s:zsh_syntax_variables =~ 'short\|all'
-  syn match zshShortDeref       '\$[!#$*@?_-]\w\@!'
-  syn match zshShortDeref       '\$[=^~]*[#+]*\d\+\>'
-endif
+syn match zshLongDeref        '\$\%(ARGC\|argv\|status\|pipestatus\|CPUTYPE\|EGID\|EUID\|ERRNO\|GID\|HOST\|LINENO\|LOGNAME\)'
+syn match zshLongDeref        '\$\%(MACHTYPE\|OLDPWD OPTARG\|OPTIND\|OSTYPE\|PPID\|PWD\|RANDOM\|SECONDS\|SHLVL\|signals\)'
+syn match zshLongDeref        '\$\%(TRY_BLOCK_ERROR\|TTY\|TTYIDLE\|UID\|USERNAME\|VENDOR\|ZSH_NAME\|ZSH_VERSION\|REPLY\|reply\|TERM\)'
 
-if s:zsh_syntax_variables =~ 'long\|all'
-  syn match zshLongDeref        '\$\%(ARGC\|argv\|status\|pipestatus\|CPUTYPE\|EGID\|EUID\|ERRNO\|GID\|HOST\|LINENO\|LOGNAME\)'
-  syn match zshLongDeref        '\$\%(MACHTYPE\|OLDPWD OPTARG\|OPTIND\|OSTYPE\|PPID\|PWD\|RANDOM\|SECONDS\|SHLVL\|signals\)'
-  syn match zshLongDeref        '\$\%(TRY_BLOCK_ERROR\|TTY\|TTYIDLE\|UID\|USERNAME\|VENDOR\|ZSH_NAME\|ZSH_VERSION\|REPLY\|reply\|TERM\)'
-endif
-
-if s:zsh_syntax_variables =~ 'all'
-  syn match zshDeref            '\$[=^~]*[#+]*\h\w*\>'
-else
-  syn match zshDeref            transparent contains=NONE '\$[=^~]*[#+]*\h\w*\>'
-endif
+syn match zshDeref            '\$[=^~]*[#+]*\h\w*\>'
 
 syn match   zshCommands         '\%(^\|\s\)[.:]\ze\s'
 syn keyword zshCommands         alias autoload bg bindkey break bye cap cd
@@ -206,21 +192,9 @@ hi def link zshRedir            Operator
 hi def link zshVariable         None
 hi def link zshVariableDef      zshVariable
 hi def link zshDereferencing    PreProc
-if s:zsh_syntax_variables =~ 'short\|all'
-  hi def link zshShortDeref     zshDereferencing
-else
-  hi def link zshShortDeref     None
-endif
-if s:zsh_syntax_variables =~ 'long\|all'
-  hi def link zshLongDeref      zshDereferencing
-else
-  hi def link zshLongDeref      None
-endif
-if s:zsh_syntax_variables =~ 'all'
-  hi def link zshDeref          zshDereferencing
-else
-  hi def link zshDeref          None
-endif
+hi def link zshShortDeref     zshDereferencing
+hi def link zshLongDeref      zshDereferencing
+hi def link zshDeref          zshDereferencing
 hi def link zshCommands         Keyword
 hi def link zshOptStart         Keyword
 hi def link zshOption           Constant
