@@ -155,7 +155,7 @@ syn region  zshParentheses      transparent start='(' skip='\\)' end=')' fold
 syn region  zshGlob             start='(#' end=')'
 syn region  zshMathSubst        matchgroup=zshSubstDelim transparent
                                 \ start='\$((' skip='\\)' end='))'
-                                \ contains=zshParentheses,zshVariable, @zshSubst,zshNumber,
+                                \ contains=zshParentheses,@zshSubst,zshNumber,
                                 \ @zshDerefs,zshString keepend fold
 syn region  zshBrackets         contained transparent start='{' skip='\\}'
                                 \ end='}' fold
