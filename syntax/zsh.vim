@@ -91,7 +91,7 @@ syn region  zshVariableDef      oneline
                                 \ start='\$\@<!\<\h\w*\[' end='\]\ze+\?=\?'
                                 \ contains=@zshSubst
 
-syn cluster zshDerefs           contains=zshShortDeref,zshLongDeref,zshDeref
+syn cluster zshDerefs           contains=zshShortDeref,zshLongDeref,zshDeref,zshDollarVar
 
 syn match zshShortDeref       '\$[!#$*@?_-]\w\@!'
 syn match zshShortDeref       '\$[=^~]*[#+]*\d\+\>'
@@ -100,6 +100,7 @@ syn match zshLongDeref        '\$\%(ARGC\|argv\|status\|pipestatus\|CPUTYPE\|EGI
 syn match zshLongDeref        '\$\%(MACHTYPE\|OLDPWD OPTARG\|OPTIND\|OSTYPE\|PPID\|PWD\|RANDOM\|SECONDS\|SHLVL\|signals\)'
 syn match zshLongDeref        '\$\%(TRY_BLOCK_ERROR\|TTY\|TTYIDLE\|UID\|USERNAME\|VENDOR\|ZSH_NAME\|ZSH_VERSION\|REPLY\|reply\|TERM\)'
 
+syn match zshDollarVar        '\$\h\w*'
 syn match zshDeref            '\$[=^~]*[#+]*\h\w*\>'
 
 syn match   zshCommands         '\%(^\|\s\)[.:]\ze\s'
@@ -153,9 +154,8 @@ syn region  zshSubst            matchgroup=zshSubstDelim transparent
 syn region  zshParentheses      transparent start='(' skip='\\)' end=')' fold
 syn region  zshGlob             start='(#' end=')'
 syn region  zshMathSubst        matchgroup=zshSubstDelim transparent
-                                \ start='\$((' skip='\\)'
-                                \ matchgroup=zshSubstDelim end='))'
-                                \ contains=zshParentheses,@zshSubst,zshNumber,
+                                \ start='\$((' skip='\\)' end='))'
+                                \ contains=zshParentheses,zshVariable, @zshSubst,zshNumber,
                                 \ @zshDerefs,zshString keepend fold
 syn region  zshBrackets         contained transparent start='{' skip='\\}'
                                 \ end='}' fold
@@ -192,9 +192,10 @@ hi def link zshRedir            Operator
 hi def link zshVariable         None
 hi def link zshVariableDef      zshVariable
 hi def link zshDereferencing    PreProc
-hi def link zshShortDeref     zshDereferencing
-hi def link zshLongDeref      zshDereferencing
-hi def link zshDeref          zshDereferencing
+hi def link zshShortDeref       zshDereferencing
+hi def link zshLongDeref        zshDereferencing
+hi def link zshDeref            zshDereferencing
+hi def link zshDollarVar        zshDereferencing
 hi def link zshCommands         Keyword
 hi def link zshOptStart         Keyword
 hi def link zshOption           Constant
