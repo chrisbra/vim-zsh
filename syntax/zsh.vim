@@ -24,7 +24,7 @@ endif
 
 syn keyword zshTodo             contained TODO FIXME XXX NOTE
 
-syn region  zshComment          oneline start='\%(^\|\s*\)#' end='$'
+syn region  zshComment          oneline start='\%(^\|\s\+\)#' end='$'
                                 \ contains=zshTodo,@Spell fold
 
 syn region  zshComment          start='^\s*#' end='^\%(\s*#\)\@!'
