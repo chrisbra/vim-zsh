@@ -324,7 +324,7 @@ syn match   zshOption /
       \ \%(\%(\<no_\?\)\?vi\>\)\|
       \ \%(\%(\<no_\?\)\?warncreateglobal\>\)\|\%(\%(no_\?\)\?warn_create_global\>\)\|
       \ \%(\%(\<no_\?\)\?xtrace\>\)\|
-      \ \%(\%(\<no_\?\)\?zle\>\)/ nextgroup=zshOption skipwhite contained
+      \ \%(\%(\<no_\?\)\?zle\>\)/ nextgroup=zshOption,zshComment skipwhite contained
 
 syn keyword zshTypes            float integer local typeset declare private readonly
 
