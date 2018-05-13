@@ -2,7 +2,7 @@
 " Language:             Zsh shell script
 " Maintainer:           Christian Brabandt <cb@256bit.org>
 " Previous Maintainer:  Nikolai Weibull <now@bitwi.se>
-" Latest Revision:      2017-11-22
+" Latest Revision:      2018-05-12
 " License:              Vim (see :h license)
 " Repository:           https://github.com/chrisbra/vim-zsh
 
