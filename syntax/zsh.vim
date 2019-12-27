@@ -2,7 +2,7 @@
 " Language:             Zsh shell script
 " Maintainer:           Christian Brabandt <cb@256bit.org>
 " Previous Maintainer:  Nikolai Weibull <now@bitwi.se>
-" Latest Revision:      2018-07-13
+" Latest Revision:      2019-12-26
 " License:              Vim (see :h license)
 " Repository:           https://github.com/chrisbra/vim-zsh
 
@@ -356,7 +356,7 @@ syn region  zshBrackets         transparent start='{' skip='\\}'
                                 \ end='}' contains=TOP fold
 syn region  zshSubst            matchgroup=zshSubstDelim start='\${' skip='\\}'
                                 \ end='}' contains=@zshSubst,zshBrackets,zshQuoted,zshString fold
-syn region  zshOldSubst         matchgroup=zshSubstDelim start=+`+ skip=+\\`+
+syn region  zshOldSubst         matchgroup=zshSubstDelim start=+`+ skip=+\\[\\`]+
                                 \ end=+`+ contains=TOP,zshOldSubst fold
 
 syn sync    minlines=50 maxlines=90
