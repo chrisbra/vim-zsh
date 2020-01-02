@@ -2,7 +2,7 @@
 " Language:             Zsh shell script
 " Maintainer:           Christian Brabandt <cb@256bit.org>
 " Previous Maintainer:  Nikolai Weibull <now@bitwi.se>
-" Latest Revision:      2019-12-26
+" Latest Revision:      2020-01-01
 " License:              Vim (see :h license)
 " Repository:           https://github.com/chrisbra/vim-zsh
 
@@ -32,13 +32,16 @@ syn region  zshComment          start='^\s*#' end='^\%(\s*#\)\@!'
 
 syn match   zshPreProc          '^\%1l#\%(!\|compdef\|autoload\).*$'
 
+syn match   zshPOSIXQuoted      '\\[xX][0-9a-fA-F]\{1,2}'
+syn match   zshPOSIXQuoted      '\\[0-7]\{1,3}'
+syn match   zshPOSIXQuoted      '\\u[0-9a-fA-F]\{1,4}'
+syn match   zshPOSIXQuoted      '\\U[1-9a-fA-F]\{1,8}'
 syn match   zshQuoted           '\\.'
 syn region  zshString           matchgroup=zshStringDelimiter start=+"+ end=+"+
                                 \ contains=zshQuoted,@zshDerefs,@zshSubst fold
 syn region  zshString           matchgroup=zshStringDelimiter start=+'+ end=+'+ fold
-" XXX: This should probably be more precise, but Zsh seems a bit confused about it itself
 syn region  zshPOSIXString      matchgroup=zshStringDelimiter start=+\$'+
-                                \ end=+'+ contains=zshQuoted
+                                \ skip=+\\[\\']+ end=+'+ contains=zshPOSIXQuoted,zshQuoted
 syn match   zshJobSpec          '%\(\d\+\|?\=\w\+\|[%+-]\)'
 
 syn keyword zshPrecommand       noglob nocorrect exec command builtin - time
@@ -367,6 +370,7 @@ hi def link zshTodo             Todo
 hi def link zshComment          Comment
 hi def link zshPreProc          PreProc
 hi def link zshQuoted           SpecialChar
+hi def link zshPOSIXQuoted      SpecialChar
 hi def link zshString           String
 hi def link zshStringDelimiter  zshString
 hi def link zshPOSIXString      zshString
