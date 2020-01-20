@@ -36,11 +36,7 @@ endfunction
 
 let s:contained=s:ContainedGroup()
 
-if v:version > 704 || (v:version == 704 && has("patch1142"))
-    syn iskeyword @,48-57,_,192-255,#,-
-else
-    setlocal iskeyword+=-
-endif
+syn iskeyword @,48-57,_,192-255,#,-
 if get(g:, 'zsh_fold_enable', 0)
     setlocal foldmethod=syntax
 endif
