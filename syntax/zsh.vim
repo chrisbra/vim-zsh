@@ -368,7 +368,7 @@ syn match   zshNumber           '[+-]\=\d\+\.\d\+\>'
 
 " TODO: $[...] is the same as $((...)), so add that as well.
 syn cluster zshSubst            contains=zshSubst,zshOldSubst,zshMathSubst
-exe 'syn region  zshSubst            matchgroup=zshSubstDelim transparent start=''\$('' skip=''\\)'' end='')'' contains='.s:contained. '  fold'
+exe 'syn region  zshSubst       matchgroup=zshSubstDelim transparent start=/\$(/ skip=/\\)/ end=/)/ contains='.s:contained. '  fold'
 syn region  zshParentheses      transparent start='(' skip='\\)' end=')' fold
 syn region  zshGlob             start='(#' end=')'
 syn region  zshMathSubst        matchgroup=zshSubstDelim transparent
@@ -377,10 +377,10 @@ syn region  zshMathSubst        matchgroup=zshSubstDelim transparent
                                 \ @zshDerefs,zshString keepend fold
 syn region  zshBrackets         contained transparent start='{' skip='\\}'
                                 \ end='}' fold
-exe 'syn region  zshBrackets    transparent start="{" skip=''\\}'' end="}" contains='.s:contained. ' fold'
+exe 'syn region  zshBrackets    transparent start=/{/ skip=/\\}/ end=/}/ contains='.s:contained. ' fold'
 syn region  zshSubst            matchgroup=zshSubstDelim start='\${' skip='\\}'
                                 \ end='}' contains=@zshSubst,zshBrackets,zshQuoted,zshString fold
-exe 'syn region  zshOldSubst    matchgroup=zshSubstDelim start=+`+ skip=+\\[\\`]+ end=+`+ contains='.s:contained. ',zshOldSubst fold'
+exe 'syn region  zshOldSubst    matchgroup=zshSubstDelim start=/`/ skip=/\\[\\`]/ end=/`/ contains='.s:contained. ',zshOldSubst fold'
 
 syn sync    minlines=50 maxlines=90
 syn sync    match zshHereDocSync    grouphere   NONE '<<-\=\s*\%(\\\=\S\+\|\(["']\)\S\+\1\)'
