@@ -371,9 +371,12 @@ syn region  zshMathSubst        matchgroup=zshSubstDelim transparent
                                 \ start='\$((' skip='\\)' end='))'
                                 \ contains=zshParentheses,@zshSubst,zshNumber,
                                 \ @zshDerefs,zshString keepend fold
-syn region  zshBrackets         contained transparent start='{' skip='\\}'
+" The ms=s+1 prevents matching zshBrackets several times on opening brackets
+" (see https://github.com/chrisbra/vim-zsh/issues/21#issuecomment-576330348)
+syn region  zshBrackets         contained transparent start='{'ms=s+1 skip='\\}'
                                 \ end='}' fold
-exe 'syn region  zshBrackets    transparent start=/{/ skip=/\\}/ end=/}/ contains='.s:contained. ' fold'
+exe 'syn region  zshBrackets    transparent start=/{/ms=s+1 skip=/\\}/ end=/}/ contains='.s:contained. ' fold'
+
 syn region  zshSubst            matchgroup=zshSubstDelim start='\${' skip='\\}'
                                 \ end='}' contains=@zshSubst,zshBrackets,zshQuoted,zshString fold
 exe 'syn region  zshOldSubst    matchgroup=zshSubstDelim start=/`/ skip=/\\[\\`]/ end=/`/ contains='.s:contained. ',zshOldSubst fold'
