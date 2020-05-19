@@ -32,7 +32,7 @@ if executable('zsh')
   let b:undo_ftplugin .= 'keywordprg< errorformat< makeprg<'
 endif
 
-let b:match_words = ',\<if\>:\<elif\>:\<else\>:\<fi\>'
+let b:match_words = '\<if\>:\<elif\>:\<else\>:\<fi\>'
       \ . ',\<case\>:^\s*([^)]*):\<esac\>'
       \ . ',\<\%(select\|while\|until\|repeat\|for\%(each\)\=\)\>:\<done\>'
 let b:match_skip = 's:comment\|string\|heredoc\|subst'
