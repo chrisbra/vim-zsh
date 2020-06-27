@@ -188,6 +188,7 @@ syn match   zshOption /
       \ \%(\%(\<no_\?\)\?casematch\>\)\|\%(\%(no_\?\)\?case_match\>\)\|
       \ \%(\%(\<no_\?\)\?cbases\>\)\|\%(\%(no_\?\)\?c_bases\>\)\|
       \ \%(\%(\<no_\?\)\?cdablevars\>\)\|\%(\%(no_\?\)\?cdable_vars\>\)\|\%(\%(no_\?\)\?cd_able_vars\>\)\|
+      \ \%(\%(\<no_\?\)\?cdsilent\>\)\|\%(\%(no_\?\)\?cd_silent\>\)\|\%(\%(no_\?\)\?cd_silent\>\)\|
       \ \%(\%(\<no_\?\)\?chasedots\>\)\|\%(\%(no_\?\)\?chase_dots\>\)\|
       \ \%(\%(\<no_\?\)\?chaselinks\>\)\|\%(\%(no_\?\)\?chase_links\>\)\|
       \ \%(\%(\<no_\?\)\?checkjobs\>\)\|\%(\%(no_\?\)\?check_jobs\>\)\|
