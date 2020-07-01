@@ -194,6 +194,7 @@ syn match   zshOption /
       \ \%(\%(\<no_\?\)\?checkjobs\>\)\|\%(\%(no_\?\)\?check_jobs\>\)\|
       \ \%(\%(\<no_\?\)\?checkrunningjobs\>\)\|\%(\%(no_\?\)\?check_running_jobs\>\)\|
       \ \%(\%(\<no_\?\)\?clobber\>\)\|
+      \ \%(\%(\<no_\?\)\?clobberempty\>\)\|\%(\%(no_\?\)\?clobber_empty\>\)\|
       \ \%(\%(\<no_\?\)\?combiningchars\>\)\|\%(\%(no_\?\)\?combining_chars\>\)\|
       \ \%(\%(\<no_\?\)\?completealiases\>\)\|\%(\%(no_\?\)\?complete_aliases\>\)\|
       \ \%(\%(\<no_\?\)\?completeinword\>\)\|\%(\%(no_\?\)\?complete_in_word\>\)\|
@@ -334,6 +335,7 @@ syn match   zshOption /
       \ \%(\%(\<no_\?\)\?shnullcmd\>\)\|\%(\%(no_\?\)\?sh_nullcmd\>\)\|
       \ \%(\%(\<no_\?\)\?shoptionletters\>\)\|\%(\%(no_\?\)\?sh_option_letters\>\)\|
       \ \%(\%(\<no_\?\)\?shortloops\>\)\|\%(\%(no_\?\)\?short_loops\>\)\|
+      \ \%(\%(\<no_\?\)\?shortrepeat\>\)\|\%(\%(no_\?\)\?short_repeat\>\)\|
       \ \%(\%(\<no_\?\)\?shwordsplit\>\)\|\%(\%(no_\?\)\?sh_word_split\>\)\|
       \ \%(\%(\<no_\?\)\?singlecommand\>\)\|\%(\%(no_\?\)\?single_command\>\)\|
       \ \%(\%(\<no_\?\)\?singlelinezle\>\)\|\%(\%(no_\?\)\?single_line_zle\>\)\|
