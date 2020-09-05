@@ -354,6 +354,8 @@ syn match   zshOption /
       \ \%(\%(\<no_\?\)\?xtrace\>\)\|
       \ \%(\%(\<no_\?\)\?zle\>\)/ nextgroup=zshOption,zshComment skipwhite contained
 
+syn case match
+
 syn keyword zshTypes            float integer local typeset declare private readonly
 
 " XXX: this may be too much
