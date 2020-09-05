@@ -41,16 +41,6 @@ if get(g:, 'zsh_fold_enable', 0)
     setlocal foldmethod=syntax
 endif
 
-syn keyword zshTodo             contained TODO FIXME XXX NOTE
-
-syn region  zshComment          oneline start='\%(^\|\s\+\)#' end='$'
-                                \ contains=zshTodo,@Spell fold
-
-syn region  zshComment          start='^\s*#' end='^\%(\s*#\)\@!'
-                                \ contains=zshTodo,@Spell fold
-
-syn match   zshPreProc          '^\%1l#\%(!\|compdef\|autoload\).*$'
-
 syn match   zshPOSIXQuoted      '\\[xX][0-9a-fA-F]\{1,2}'
 syn match   zshPOSIXQuoted      '\\[0-7]\{1,3}'
 syn match   zshPOSIXQuoted      '\\u[0-9a-fA-F]\{1,4}'
@@ -387,6 +377,16 @@ exe 'syn region  zshOldSubst    matchgroup=zshSubstDelim start=/`/ skip=/\\[\\`]
 syn sync    minlines=50 maxlines=90
 syn sync    match zshHereDocSync    grouphere   NONE '<<-\=\s*\%(\\\=\S\+\|\(["']\)\S\+\1\)'
 syn sync    match zshHereDocEndSync groupthere  NONE '^\s*EO\a\+\>'
+
+syn keyword zshTodo             contained TODO FIXME XXX NOTE
+
+syn region  zshComment          oneline start='\%(^\|\s\+\)#' end='$'
+                                \ contains=zshTodo,@Spell fold
+
+syn region  zshComment          start='^\s*#' end='^\%(\s*#\)\@!'
+                                \ contains=zshTodo,@Spell fold
+
+syn match   zshPreProc          '^\%1l#\%(!\|compdef\|autoload\).*$'
 
 hi def link zshTodo             Todo
 hi def link zshComment          Comment
