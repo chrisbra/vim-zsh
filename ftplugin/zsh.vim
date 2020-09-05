@@ -26,10 +26,11 @@ if executable('zsh')
  else
    command! -buffer -nargs=1 RunHelp echo system('zsh -ic "autoload -Uz run-help; run-help <args> 2>/dev/null"')
  endif
+  if !exists('current_compiler')
+    compiler zsh
+  endif
   setlocal keywordprg=:RunHelp
-  setlocal makeprg=zsh\ -n\ --\ %:S
-  setlocal errorformat=%f:\ line\ %l:\ %m
-  let b:undo_ftplugin .= 'keywordprg< errorformat< makeprg<'
+  let b:undo_ftplugin .= 'keywordprg<'
 endif
 
 let b:match_words = '\<if\>:\<elif\>:\<else\>:\<fi\>'
