@@ -2,7 +2,7 @@
 " Language:             Zsh shell script
 " Maintainer:           Christian Brabandt <cb@256bit.org>
 " Previous Maintainer:  Nikolai Weibull <now@bitwi.se>
-" Latest Revision:      2020-01-23
+" Latest Revision:      2020-11-21
 " License:              Vim (see :h license)
 " Repository:           https://github.com/chrisbra/vim-zsh
 
@@ -14,7 +14,7 @@ let s:cpo_save = &cpo
 set cpo&vim
 
 function! s:ContainedGroup()
-	" needs 7.4.2008 for execute() function
+  " needs 7.4.2008 for execute() function
   let result='TOP'
     " vim-pandoc syntax defines the @langname cluster for embedded syntax languages
     " However, if no syntax is defined yet, `syn list @zsh` will return
