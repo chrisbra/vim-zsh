@@ -363,7 +363,7 @@ exe 'syn region  zshSubst       matchgroup=zshSubstDelim transparent start=/\$(/
 syn region  zshParentheses      transparent start='(' skip='\\)' end=')' fold
 syn region  zshGlob             start='(#' end=')'
 syn region  zshMathSubst        matchgroup=zshSubstDelim transparent
-                                \ start='\$\?((' skip='\\)' end='))'
+                                \ start='\%(\$\?\)[<=>]\@<!((' skip='\\)' end='))'
                                 \ contains=zshParentheses,@zshSubst,zshNumber,
                                 \ @zshDerefs,zshString keepend fold
 " The ms=s+1 prevents matching zshBrackets several times on opening brackets
