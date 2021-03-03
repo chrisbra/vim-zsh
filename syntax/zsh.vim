@@ -41,11 +41,12 @@ if get(g:, 'zsh_fold_enable', 0)
     setlocal foldmethod=syntax
 endif
 
+syn match   zshQuoted           '\\.'
 syn match   zshPOSIXQuoted      '\\[xX][0-9a-fA-F]\{1,2}'
 syn match   zshPOSIXQuoted      '\\[0-7]\{1,3}'
 syn match   zshPOSIXQuoted      '\\u[0-9a-fA-F]\{1,4}'
 syn match   zshPOSIXQuoted      '\\U[1-9a-fA-F]\{1,8}'
-syn match   zshQuoted           '\\.'
+
 syn region  zshString           matchgroup=zshStringDelimiter start=+"+ end=+"+
                                 \ contains=zshQuoted,@zshDerefs,@zshSubst fold
 syn region  zshString           matchgroup=zshStringDelimiter start=+'+ end=+'+ fold
