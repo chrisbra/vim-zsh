@@ -18,7 +18,7 @@ setlocal comments=:# commentstring=#\ %s formatoptions-=t formatoptions+=croql
 
 let b:undo_ftplugin = "setl com< cms< fo< "
 
-if executable('zsh')
+if executable('zsh') && &shell !~# '/\%(nologin\|false\)$'
   if !has('gui_running') && executable('less')
     command! -buffer -nargs=1 RunHelp silent exe '!MANPAGER= zsh -ic "autoload -Uz run-help; run-help <args> 2>/dev/null | LESS= less"' | redraw!
   elseif has('terminal')
