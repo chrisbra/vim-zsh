@@ -20,11 +20,11 @@ let b:undo_ftplugin = "setl com< cms< fo< "
 
 if executable('zsh') && &shell !~# '/\%(nologin\|false\)$'
   if !has('gui_running') && executable('less')
-    command! -buffer -nargs=1 RunHelp silent exe '!MANPAGER= zsh -ic "autoload -Uz run-help; run-help <args> 2>/dev/null | LESS= less"' | redraw!
+    command! -buffer -nargs=1 RunHelp silent exe '!MANPAGER= zsh -c "autoload -Uz run-help; run-help <args> 2>/dev/null | LESS= less"' | redraw!
   elseif has('terminal')
-    command! -buffer -nargs=1 RunHelp silent exe ':term zsh -ic "autoload -Uz run-help; run-help <args>"'
+    command! -buffer -nargs=1 RunHelp silent exe ':term zsh -c "autoload -Uz run-help; run-help <args>"'
   else
-    command! -buffer -nargs=1 RunHelp echo system('zsh -ic "autoload -Uz run-help; run-help <args> 2>/dev/null"')
+    command! -buffer -nargs=1 RunHelp echo system('zsh -c "autoload -Uz run-help; run-help <args> 2>/dev/null"')
   endif
   if !exists('current_compiler')
     compiler zsh
