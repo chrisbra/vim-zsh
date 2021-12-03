@@ -164,7 +164,7 @@ syn region  zshGlob             start='(#' end=')'
 syn region  zshMathSubst        matchgroup=zshSubstDelim transparent
                                 \ start='\%(\$\?\)[<=>]\@<!((' skip='\\)' end='))'
                                 \ contains=zshParentheses,@zshSubst,zshNumber,
-                                \ @zshDerefs,zshString keepend fold
+                                \ @zshDerefs,zshString fold
 " The ms=s+1 prevents matching zshBrackets several times on opening brackets
 " (see https://github.com/chrisbra/vim-zsh/issues/21#issuecomment-576330348)
 syn region  zshBrackets         contained transparent start='{'ms=s+1 skip='\\}'
