@@ -10,7 +10,7 @@ for opt in $(grep '^pindex([A-Za-z_]*)$' "$src/Doc/Zsh/options.yo"); do
 done
 all+=(no_match)  # Special case: no_match / no_no_match.
 
-print "syn match   zshOption nextgroup=zshOption,zshComment skipwhite contained /\\\v"
-print "            \\\ <%(no_?)?%("
-print "            \\\ ${(oj:|:)all//_/_?})>/"
-print "            \\\)>/"  # Note: a space here will break the last entry.
+print -r 'syn match   zshOption nextgroup=zshOption,zshComment skipwhite contained /\v'
+print -r '            \<%(no_?)?%('
+print -r "            \\${(oj:|:)all//_/_?}"
+print -r '            \)>/'  # Note: a space here will break the last entry.
