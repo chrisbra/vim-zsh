@@ -58,7 +58,12 @@ syn keyword zshPrecommand       noglob nocorrect exec command builtin - time
 
 syn keyword zshDelimiter        do done end
 
-syn keyword zshConditional      if then elif else fi case in esac select
+syn keyword zshConditional      if then elif else fi esac select
+
+syn keyword zshCase             case nextgroup=zshCaseWord skipwhite
+syn match zshCaseWord           /\S\+/ nextgroup=zshCaseIn skipwhite contained transparent
+syn keyword zshCaseIn           in nextgroup=zshCasePattern skipwhite skipnl contained
+syn match zshCasePattern        /\S[^)]*)/ contained
 
 syn keyword zshRepeat           while until repeat
 
@@ -201,6 +206,8 @@ hi def link zshJobSpec          Special
 hi def link zshPrecommand       Special
 hi def link zshDelimiter        Keyword
 hi def link zshConditional      Conditional
+hi def link zshCase             zshConditional
+hi def link zshCaseIn           zshCase
 hi def link zshException        Exception
 hi def link zshRepeat           Repeat
 hi def link zshKeyword          Keyword
