@@ -48,7 +48,7 @@ syn match   zshPOSIXQuoted      '\\u[0-9a-fA-F]\{1,4}'
 syn match   zshPOSIXQuoted      '\\U[1-9a-fA-F]\{1,8}'
 
 syn region  zshString           matchgroup=zshStringDelimiter start=+"+ end=+"+
-                                \ contains=zshQuoted,@zshDerefs,@zshSubst fold
+                                \ contains=zshQuoted,@zshDerefs,@zshSubstQuoted fold
 syn region  zshString           matchgroup=zshStringDelimiter start=+'+ end=+'+ fold
 syn region  zshPOSIXString      matchgroup=zshStringDelimiter start=+\$'+
                                 \ skip=+\\[\\']+ end=+'+ contains=zshPOSIXQuoted,zshQuoted
@@ -163,7 +163,10 @@ syn match   zshNumber           '[+-]\=\d\+\.\d\+\>'
 
 " TODO: $[...] is the same as $((...)), so add that as well.
 syn cluster zshSubst            contains=zshSubst,zshOldSubst,zshMathSubst
+syn cluster zshSubstQuoted      contains=zshSubstQuoted,zshOldSubst,zshMathSubst
 exe 'syn region  zshSubst       matchgroup=zshSubstDelim transparent start=/\$(/ skip=/\\)/ end=/)/ contains='.s:contained. '  fold'
+exe 'syn region  zshSubstQuoted matchgroup=zshSubstDelim transparent start=/\$(/ skip=/\\)/ end=/)/ contains='.s:contained. '  fold'
+syn region  zshSubstQuoted       matchgroup=zshSubstDelim start='\${' skip='\\}' end='}' contains=@zshSubst,zshBrackets,zshQuoted fold
 syn region  zshParentheses      transparent start='(' skip='\\)' end=')' fold
 syn region  zshGlob             start='(#' end=')'
 syn region  zshMathSubst        matchgroup=zshSubstDelim transparent
@@ -230,6 +233,7 @@ hi def link zshTypes            Type
 hi def link zshSwitches         Special
 hi def link zshNumber           Number
 hi def link zshSubst            PreProc
+hi def link zshSubstQuoted      zshSubst
 hi def link zshMathSubst        zshSubst
 hi def link zshOldSubst         zshSubst
 hi def link zshSubstDelim       zshSubst
