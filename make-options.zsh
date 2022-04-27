@@ -5,12 +5,9 @@ src=$1
 
 typeset -U all=()
 for opt in $(grep '^pindex([A-Za-z_]*)$' "$src/Doc/Zsh/options.yo"); do
-	x=${${(L)opt#pindex\(}%\)}
-	[[ $x =~ '^no_' ]] && all+=(${x/no_/})
+	all+=(${${(L)opt#pindex\(}%\)})
 done
-all+=(no_match)  # Special case: no_match / no_no_match.
 
-print -r 'syn match   zshOption nextgroup=zshOption,zshComment skipwhite contained /\v'
-print -r '            \<%(no_?)?%('
-print -r "            \\${(oj:|:)all//_/_?}"
-print -r '            \)>/'  # Note: a space here will break the last entry.
+IFS=$'\n' lines=($(fold -sw100 <<<${(oj: :)all}))
+print -r 'syn keyword zshOption nextgroup=zshOption,zshComment skipwhite contained'
+print    "           \\\ ${(j:\n           \\ :)lines}"
