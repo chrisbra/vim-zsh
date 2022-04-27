@@ -54,6 +54,12 @@ syn region  zshPOSIXString      matchgroup=zshStringDelimiter start=+\$'+
                                 \ skip=+\\[\\']+ end=+'+ contains=zshPOSIXQuoted,zshQuoted
 syn match   zshJobSpec          '%\(\d\+\|?\=\w\+\|[%+-]\)'
 
+syn match   zshNumber           '[+-]\=\<\d\+\>'
+syn match   zshNumber           '[+-]\=\<0x\x\+\>'
+syn match   zshNumber           '[+-]\=\<0\o\+\>'
+syn match   zshNumber           '[+-]\=\d\+#[-+]\=\w\+\>'
+syn match   zshNumber           '[+-]\=\d\+\.\d\+\>'
+
 syn keyword zshPrecommand       noglob nocorrect exec command builtin - time
 
 syn keyword zshDelimiter        do done end
@@ -78,8 +84,8 @@ syn match   zshFunction         '^\s*\k\+\ze\s*()'
 
 syn match   zshOperator         '||\|&&\|;\|&!\='
 
-syn match   zshRedir            '\d\=\(<\|<>\|<<<\|<&\s*[0-9p-]\=\)'
-syn match   zshRedir            '\d\=\(>\|>>\|>&\s*[0-9p-]\=\|&>\|>>&\|&>>\)[|!]\='
+syn match   zshRedir            '\d\=\(<<<\|<&\s*[0-9p-]\=\|<>\?\)'
+syn match   zshRedir            '\d\=\(>&\s*[0-9p-]\=\|&>>\?\|>>\?&\?\)[|!]\='
 syn match   zshRedir            '|&\='
 
 syn region  zshHereDoc          matchgroup=zshRedir
@@ -264,12 +270,6 @@ syn keyword zshTypes            float integer local typeset declare private read
 
 " XXX: this may be too much
 " syn match   zshSwitches         '\s\zs--\=[a-zA-Z0-9-]\+'
-
-syn match   zshNumber           '[+-]\=\<\d\+\>'
-syn match   zshNumber           '[+-]\=\<0x\x\+\>'
-syn match   zshNumber           '[+-]\=\<0\o\+\>'
-syn match   zshNumber           '[+-]\=\d\+#[-+]\=\w\+\>'
-syn match   zshNumber           '[+-]\=\d\+\.\d\+\>'
 
 " TODO: $[...] is the same as $((...)), so add that as well.
 syn cluster zshSubst            contains=zshSubst,zshOldSubst,zshMathSubst
