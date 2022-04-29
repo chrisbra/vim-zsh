@@ -23,4 +23,7 @@ fi
 [[ x = y ]]&&((1>0))&& print x
 
 # TODO: maybe show error for these invalid constructs (missing spaces)?
+# Since these are valid glob patterns (though unlikely), we can highlight it as
+# an error only if it's after a zshConditional, or if it's preceded or followed
+# by zshOperator.
 [[x=x]] && [x=x]
