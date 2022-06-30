@@ -90,7 +90,7 @@ syn match   zshRedir            '\d\=\(<<<\|<&\s*[0-9p-]\=\|<>\?\)'
 syn match   zshRedir            '\d\=\(>&\s*[0-9p-]\=\|&>>\?\|>>\?&\?\)[|!]\='
                                 " | and |&, but only if it's not preceeded or
                                 " followed by a | to avoid matching ||.
-syn match   zshRedir            '|\@<!|&\=|\@!'
+syn match   zshRedir            '|\@1<!|&\=|\@!'
 
 syn region  zshHereDoc          matchgroup=zshRedir
                                 \ start='<\@<!<<\s*\z([^<]\S*\)'
