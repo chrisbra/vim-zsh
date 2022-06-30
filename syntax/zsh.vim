@@ -19,9 +19,9 @@ function! s:ContainedGroup()
     " vim-pandoc syntax defines the @langname cluster for embedded syntax languages
     " However, if no syntax is defined yet, `syn list @zsh` will return
     " "No syntax items defined", so make sure the result is actually a valid syn cluster
-    for cluster in ['markdownHighlightzsh', 'zsh']
+    for cluster in ['markdownHighlight_zsh', 'zsh']
       try
-      " markdown syntax defines embedded clusters as @markdownhighlight<lang>,
+      " markdown syntax defines embedded clusters as @markdownhighlight_<lang>,
       " pandoc just uses @<lang>, so check both for both clusters
         let a=split(execute('syn list @'. cluster), "\n")
         if len(a) == 2 && a[0] =~# '^---' && a[1] =~? cluster
