@@ -140,7 +140,7 @@ syn keyword zshCommands         alias autoload bg bindkey break bye cap cd
                                 \ enable eval exec exit export false fc fg
                                 \ functions getcap getln getopts hash history
                                 \ jobs kill let limit log logout popd print
-                                \ printf pushd pushln pwd r read
+                                \ printf prompt pushd pushln pwd r read
                                 \ rehash return sched set setcap shift
                                 \ source stat suspend test times trap true
                                 \ ttyctl type ulimit umask unalias unfunction
