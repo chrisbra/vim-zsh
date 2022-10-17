@@ -48,8 +48,9 @@ syn match   zshPOSIXQuoted      '\\u[0-9a-fA-F]\{1,4}'
 syn match   zshPOSIXQuoted      '\\U[1-9a-fA-F]\{1,8}'
 
 syn region  zshString           matchgroup=zshStringDelimiter start=+"+ end=+"+
-                                \ contains=zshQuoted,@zshDerefs,@zshSubstQuoted fold
+                                \ contains=@Spell,zshQuoted,@zshDerefs,@zshSubstQuoted fold
 syn region  zshString           matchgroup=zshStringDelimiter start=+'+ end=+'+ fold
+                                \ contains=@Spell
 syn region  zshPOSIXString      matchgroup=zshStringDelimiter start=+\$'+
                                 \ skip=+\\[\\']+ end=+'+ contains=zshPOSIXQuoted,zshQuoted
 syn match   zshJobSpec          '%\(\d\+\|?\=\w\+\|[%+-]\)'
@@ -95,21 +96,23 @@ syn match   zshRedir            '|\@1<!|&\=|\@!'
 syn region  zshHereDoc          matchgroup=zshRedir
                                 \ start='<\@<!<<\s*\z([^<]\S*\)'
                                 \ end='^\z1\>'
-                                \ contains=@zshSubst,@zshDerefs,zshQuoted,zshPOSIXString
+                                \ contains=@Spell,@zshSubst,@zshDerefs,zshQuoted,zshPOSIXString
 syn region  zshHereDoc          matchgroup=zshRedir
                                 \ start='<\@<!<<\s*\\\z(\S\+\)'
                                 \ end='^\z1\>'
-                                \ contains=@zshSubst,@zshDerefs,zshQuoted,zshPOSIXString
+                                \ contains=@Spell,@zshSubst,@zshDerefs,zshQuoted,zshPOSIXString
 syn region  zshHereDoc          matchgroup=zshRedir
                                 \ start='<\@<!<<-\s*\\\=\z(\S\+\)'
                                 \ end='^\s*\z1\>'
-                                \ contains=@zshSubst,@zshDerefs,zshQuoted,zshPOSIXString
+                                \ contains=@Spell,@zshSubst,@zshDerefs,zshQuoted,zshPOSIXString
 syn region  zshHereDoc          matchgroup=zshRedir
                                 \ start=+<\@<!<<\s*\(["']\)\z(\S\+\)\1+
                                 \ end='^\z1\>'
+                                \ contains=@Spell
 syn region  zshHereDoc          matchgroup=zshRedir
                                 \ start=+<\@<!<<-\s*\(["']\)\z(\S\+\)\1+
                                 \ end='^\s*\z1\>'
+                                \ contains=@Spell
 
 syn match   zshVariable         '\<\h\w*' contained
 
