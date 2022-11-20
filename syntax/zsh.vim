@@ -95,23 +95,23 @@ syn match   zshRedir            '|\@1<!|&\=|\@!'
 
 syn region  zshHereDoc          matchgroup=zshRedir
                                 \ start='<\@<!<<\s*\z([^<]\S*\)'
-                                \ end='^\z1\>'
+                                \ end='^\z1$'
                                 \ contains=@Spell,@zshSubst,@zshDerefs,zshQuoted,zshPOSIXString
 syn region  zshHereDoc          matchgroup=zshRedir
                                 \ start='<\@<!<<\s*\\\z(\S\+\)'
-                                \ end='^\z1\>'
-                                \ contains=@Spell,@zshSubst,@zshDerefs,zshQuoted,zshPOSIXString
+                                \ end='^\z1$'
+                                \ contains=@Spell
 syn region  zshHereDoc          matchgroup=zshRedir
                                 \ start='<\@<!<<-\s*\\\=\z(\S\+\)'
-                                \ end='^\s*\z1\>'
-                                \ contains=@Spell,@zshSubst,@zshDerefs,zshQuoted,zshPOSIXString
+                                \ end='^\t*\z1$'
+                                \ contains=@Spell
 syn region  zshHereDoc          matchgroup=zshRedir
                                 \ start=+<\@<!<<\s*\(["']\)\z(\S\+\)\1+
-                                \ end='^\z1\>'
+                                \ end='^\z1$'
                                 \ contains=@Spell
 syn region  zshHereDoc          matchgroup=zshRedir
                                 \ start=+<\@<!<<-\s*\(["']\)\z(\S\+\)\1+
-                                \ end='^\s*\z1\>'
+                                \ end='^\t*\z1$'
                                 \ contains=@Spell
 
 syn match   zshVariable         '\<\h\w*' contained
