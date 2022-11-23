@@ -108,6 +108,20 @@ fun! Test_redir() abort
         \ [['zshCommands', 1, 5], ['zshRedir', 12, 13]],
         \ [['zshCommands', 1, 6], ['zshCommands', 17, 20], ['zshRedir', 30, 30], ['zshDeref', 32, 36]],
         \ [['zshCommands', 1, 5], ['zshRedir', 12, 14]],
+        \ [],
+        \ [['zshComment', 1, 15]],
+        \ [['zshRedir', 5, 10]],
+        \ [['zshSubstDelim', 1, 1], ['zshHereDoc', 3, 3], ['zshShortDeref', 9, 9], ['zshSubstDelim', 11, 11]],
+        \ [['zshHereDoc', 1, 14]],
+        \ [['zshHereDoc', 1, 4]],
+        \ [['zshRedir', 1, 3]],
+        \ [],
+        \ [['zshRedir', 5, 13]],
+        \ [['zshHereDoc', 1, 11]],
+        \ [['zshHereDoc', 1, 22]],
+        \ [['zshHereDoc', 1, 11]],
+        \ [['zshHereDoc', 1, 12]],
+        \ [['zshRedir', 1, 4]],
     \ ])
 endfun
 
