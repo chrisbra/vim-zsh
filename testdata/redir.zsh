@@ -49,3 +49,17 @@ integer myfd
 exec {myfd}>~/logs/mylogfile.txt
 print This is a log message. >&$myfd
 exec {myfd}>&-
+
+# Here Document
+cat << EOF
+$(ps -p $$)
+trailing space
+EOF 
+EOF
+
+cat <<- 'EOF'
+$(ps -p $$)
+        leading SPACES
+        EOF
+	leading TAB
+	EOF
