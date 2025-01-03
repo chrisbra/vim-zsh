@@ -69,7 +69,7 @@ syn keyword zshConditional      if then elif else fi esac select
 
 syn keyword zshCase             case nextgroup=zshCaseWord skipwhite
 syn match zshCaseWord           /\S\+/ nextgroup=zshCaseIn skipwhite contained transparent
-syn keyword zshCaseIn           in nextgroup=zshCasePattern skipwhite skipnl contained
+syn keyword zshCaseIn           in nextgroup=zshComment,zshCasePattern skipwhite skipnl contained
 syn match zshCasePattern        /\S[^)]*)/ contained
 
 syn keyword zshRepeat           while until repeat
