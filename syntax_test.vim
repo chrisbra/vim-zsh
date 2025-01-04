@@ -153,3 +153,19 @@ fun! Test_var() abort
         \ [['zshCommands', 1, 6], ['zshShortDeref', 7, 9], ['zshShortDeref', 10, 12], ['zshDeref', 13, 15], ['zshShortDeref', 16, 17]],
     \ ])
 endfun
+
+fun! Test_case() abort
+    call TestSyntax(g:test_packdir . '/testdata/case.zsh',
+        \ [
+        \ [['zshComment', 1, 17]],
+        \ [['zshComment', 1, 1]],
+        \ [],
+        \ [],
+        \ [['zshCase', 1, 5], ['zshDeref', 6, 10], ['zshCaseIn', 11, 12]],
+        \ [['zshComment', 1, 17]],
+        \ [],
+        \ [['zshComment', 1, 47]],
+        \ [['zshOperator', 9, 10]],
+        \ [['zshConditional', 1, 4]],
+    \ ])
+endfun
