@@ -2,7 +2,7 @@
 " Language:             Zsh shell script
 " Maintainer:           Christian Brabandt <cb@256bit.org>
 " Previous Maintainer:  Nikolai Weibull <now@bitwi.se>
-" Latest Revision:      2022-07-26
+" Latest Revision:      2024 Jan 04
 " License:              Vim (see :h license)
 " Repository:           https://github.com/chrisbra/vim-zsh
 
@@ -89,7 +89,7 @@ syn match   zshOperator         '||\|&&\|;\|&!\='
 syn match   zshRedir            '\d\=\(<<<\|<&\s*[0-9p-]\=\|<>\?\)'
                                 " >, >>, and variants.
 syn match   zshRedir            '\d\=\(>&\s*[0-9p-]\=\|&>>\?\|>>\?&\?\)[|!]\='
-                                " | and |&, but only if it's not preceeded or
+                                " | and |&, but only if it's not preceded or
                                 " followed by a | to avoid matching ||.
 syn match   zshRedir            '|\@1<!|&\=|\@!'
 
