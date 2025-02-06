@@ -193,7 +193,7 @@ syn keyword zshOption nextgroup=zshOption,zshComment skipwhite contained
            \ nonumericglobsort rc_expand_param no_rc_expand_param rcexpandparam norcexpandparam rematch_pcre
            \ no_rematch_pcre rematchpcre norematchpcre sh_glob no_sh_glob shglob noshglob unset no_unset nounset
            \ warn_create_global no_warn_create_global warncreateglobal nowarncreateglobal warn_nested_var
-           \ no_warn_nested_var warnnestedvar no_warnnestedvar append_history no_append_history appendhistory
+           \ no_warn_nested_var warnnestedvar nowarnnestedvar append_history no_append_history appendhistory
            \ noappendhistory bang_hist no_bang_hist banghist nobanghist extended_history no_extended_history
            \ extendedhistory noextendedhistory hist_allow_clobber no_hist_allow_clobber histallowclobber
            \ nohistallowclobber hist_beep no_hist_beep histbeep nohistbeep hist_expire_dups_first
