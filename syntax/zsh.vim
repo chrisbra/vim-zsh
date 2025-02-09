@@ -2,7 +2,7 @@
 " Language:             Zsh shell script
 " Maintainer:           Christian Brabandt <cb@256bit.org>
 " Previous Maintainer:  Nikolai Weibull <now@bitwi.se>
-" Latest Revision:      2024 Jan 04
+" Latest Revision:      2025 Feb 09
 " License:              Vim (see :h license)
 " Repository:           https://github.com/chrisbra/vim-zsh
 
@@ -157,6 +157,8 @@ syn case ignore
 syn match   zshOptStart
             \ /\v^\s*%(%(un)?setopt|set\s+[-+]o)/
             \ nextgroup=zshOption skipwhite
+
+" this list is generated using the make-options.zsh script and the zsh source repository
 syn keyword zshOption nextgroup=zshOption,zshComment skipwhite contained
            \ auto_cd no_auto_cd autocd noautocd auto_pushd no_auto_pushd autopushd noautopushd cdable_vars
            \ no_cdable_vars cdablevars nocdablevars cd_silent no_cd_silent cdsilent nocdsilent chase_dots
@@ -193,16 +195,16 @@ syn keyword zshOption nextgroup=zshOption,zshComment skipwhite contained
            \ nonumericglobsort rc_expand_param no_rc_expand_param rcexpandparam norcexpandparam rematch_pcre
            \ no_rematch_pcre rematchpcre norematchpcre sh_glob no_sh_glob shglob noshglob unset no_unset nounset
            \ warn_create_global no_warn_create_global warncreateglobal nowarncreateglobal warn_nested_var
-           \ no_warn_nested_var warnnestedvar no_warnnestedvar append_history no_append_history appendhistory
-           \ noappendhistory bang_hist no_bang_hist banghist nobanghist extended_history no_extended_history
-           \ extendedhistory noextendedhistory hist_allow_clobber no_hist_allow_clobber histallowclobber
-           \ nohistallowclobber hist_beep no_hist_beep histbeep nohistbeep hist_expire_dups_first
-           \ no_hist_expire_dups_first histexpiredupsfirst nohistexpiredupsfirst hist_fcntl_lock
-           \ no_hist_fcntl_lock histfcntllock nohistfcntllock hist_find_no_dups no_hist_find_no_dups
-           \ histfindnodups nohistfindnodups hist_ignore_all_dups no_hist_ignore_all_dups histignorealldups
-           \ nohistignorealldups hist_ignore_dups no_hist_ignore_dups histignoredups nohistignoredups
-           \ hist_ignore_space no_hist_ignore_space histignorespace nohistignorespace hist_lex_words
-           \ no_hist_lex_words histlexwords nohistlexwords hist_no_functions no_hist_no_functions
+           \ no_warn_nested_var warnnestedvar no_warnnestedvar nowarnnestedvar append_history no_append_history
+           \ appendhistory noappendhistory bang_hist no_bang_hist banghist nobanghist extended_history
+           \ no_extended_history extendedhistory noextendedhistory hist_allow_clobber no_hist_allow_clobber
+           \ histallowclobber nohistallowclobber hist_beep no_hist_beep histbeep nohistbeep
+           \ hist_expire_dups_first no_hist_expire_dups_first histexpiredupsfirst nohistexpiredupsfirst
+           \ hist_fcntl_lock no_hist_fcntl_lock histfcntllock nohistfcntllock hist_find_no_dups
+           \ no_hist_find_no_dups histfindnodups nohistfindnodups hist_ignore_all_dups no_hist_ignore_all_dups
+           \ histignorealldups nohistignorealldups hist_ignore_dups no_hist_ignore_dups histignoredups
+           \ nohistignoredups hist_ignore_space no_hist_ignore_space histignorespace nohistignorespace
+           \ hist_lex_words no_hist_lex_words histlexwords nohistlexwords hist_no_functions no_hist_no_functions
            \ histnofunctions nohistnofunctions hist_no_store no_hist_no_store histnostore nohistnostore
            \ hist_reduce_blanks no_hist_reduce_blanks histreduceblanks nohistreduceblanks hist_save_by_copy
            \ no_hist_save_by_copy histsavebycopy nohistsavebycopy hist_save_no_dups no_hist_save_no_dups
