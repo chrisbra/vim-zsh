@@ -37,9 +37,6 @@ endfunction
 let s:contained=s:ContainedGroup()
 
 syn iskeyword @,48-57,_,192-255,#,-
-if get(g:, 'zsh_fold_enable', 0)
-    setlocal foldmethod=syntax
-endif
 
 syn match   zshQuoted           '\\.'
 syn match   zshPOSIXQuoted      '\\[xX][0-9a-fA-F]\{1,2}'
