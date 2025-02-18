@@ -18,6 +18,11 @@ setlocal comments=:# commentstring=#\ %s formatoptions-=t formatoptions+=croql
 
 let b:undo_ftplugin = "setl com< cms< fo< "
 
+if get(g:, 'zsh_fold_enable', 0)
+    setlocal foldmethod=syntax
+    let b:undo_ftplugin .= "fdm< "
+endif
+
 if executable('zsh') && &shell !~# '/\%(nologin\|false\)$'
   if exists(':terminal') == 2
     command! -buffer -nargs=1 ZshKeywordPrg silent exe ':term zsh -c "autoload -Uz run-help; run-help <args>"'
