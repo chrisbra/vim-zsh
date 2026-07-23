@@ -23,7 +23,7 @@ if get(g:, 'zsh_fold_enable', 0)
     let b:undo_ftplugin .= "fdm< "
 endif
 
-if executable('zsh') && &shell !~# '/\%(nologin\|false\)$'
+if executable('zsh') && &shell !~# '/\%(nologin\|false\)$' && has("patch-9.2.0250")
   if exists(':terminal') == 2
     command! -buffer -nargs=1 ZshKeywordPrg call term_start(['zsh', '-c', 'autoload -Uz run-help; run-help "$1"', '--', <q-args>])
   else
